@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 1
+        run: echo "job 1 is executed successfully"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1 #for dependent jobs
+    steps:
+      - name: job2
+        run: echo "job 2 executed successfully"
